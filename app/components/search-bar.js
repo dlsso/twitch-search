@@ -5,9 +5,10 @@ export default Ember.Component.extend({
   query: '',
 
   queryChanged: Ember.observer('query', function() {
-    var query = this.get('query');
+    let query = this.get('query');
     if(query.length > 3){
       let request = {
+        accept: 'application/vnd.twitchtv.v5+json',
         client_id: config.apiKey,
         limit: "10",
         offset: "0",
