@@ -20,6 +20,16 @@ export default Ember.Component.extend({
 				}
 				this.set('data', response);
 			});
+		},
+		handleKeyPress: function(links){
+			// Show previous page on left arrow
+			if(event.keyCode === 37 && links.prev){
+				this.send('changePage', links.prev);
+			}
+			// Show next page on right arrow
+			if(event.keyCode === 39 && links.next){
+				this.send('changePage', links.next);
+			}
 		}
-	}
+	},
 });

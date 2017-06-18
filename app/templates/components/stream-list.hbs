@@ -1,15 +1,15 @@
-<div class="results-container container">
+<div class="results-container container" {{action "handleKeyPress" data._links on="keyDown"}}>
 {{#if data._total}}
 	<div class="streams-header row">
 		<div class="total-results col-xs-6">
 			Total results: {{data._total}}
 		</div>
-		<div class="pagination-controls col-xs-6">
+		<div class="pagination-controls col-xs-6" title="Use left and right arrow keys to change pages">
 			{{#if data._links.prev}}
-				<span {{action 'changePage' data._links.prev}} class="prev-page">&#x25C0;</span>
+				<button tabindex="0" {{action 'changePage' data._links.prev}} class="prev-page">&#x25C0;</button>
 			{{/if}}
 			<span>{{data.page_number}}/{{data.pages}}</span>
-			<span {{action 'changePage' data._links.next}} class="next-page">&#x25b6;</span>
+			<button tabindex="0" {{action 'changePage' data._links.next}} class="next-page">&#x25b6;</button>
 		</div>
 	</div>
 {{else if data.no_results}}
