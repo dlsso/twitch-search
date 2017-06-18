@@ -15,6 +15,11 @@ export default Ember.Component.extend({
 		        // Send data to template after setting a few useful properties
 				response.page_number = (offset/numberPerPage) + 1;
 				response.pages = Math.ceil(response._total/numberPerPage);
+				// If we are on the last page remove link to next page
+				// This standardizes the api which does not return a prev link for the first page
+				if(response.page_number >= response.pages){
+				  delete response._links.next;
+				}
 				if(!response._total){
 					response.no_results = true;
 				}

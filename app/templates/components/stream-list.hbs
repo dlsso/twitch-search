@@ -9,7 +9,9 @@
 				<button tabindex="0" {{action 'changePage' data._links.prev}} class="prev-page">&#x25C0;</button>
 			{{/if}}
 			<span>{{data.page_number}}/{{data.pages}}</span>
-			<button tabindex="0" {{action 'changePage' data._links.next}} class="next-page">&#x25b6;</button>
+			{{#if data._links.next}}
+				<button tabindex="0" {{action 'changePage' data._links.next}} class="next-page">&#x25b6;</button>
+			{{/if}}
 		</div>
 	</div>
 {{else if data.no_results}}
