@@ -1,8 +1,18 @@
- {{#each data.streams as |stream|}}
-<h2>{{stream.channel.display_name}}</h2>
-<div class="channel-preview">
-	<img src="{{stream.preview.medium}}">
+<div class="container">
+{{#each data.streams as |stream|}}
+	<div class="channel-row row">
+		<div class="col-sm-4 col-md-3">
+			<div class="channel-preview">
+				<img class="preview-img" src="{{stream.preview.medium}}">
+			</div>
+		</div>
+		<div class="col-sm-8 col-md-9">
+			<div class="channel-info">
+				<div class="channel-name">{{stream.channel.display_name}}</div>
+				<div class="channel-details">{{stream.game}} - {{stream.viewers}} viewers</div>
+				<div class="channel-description">{{stream.channel.status}}</div>
+			</div>
+		</div>
+	</div>
+{{/each}}
 </div>
-<div class="channel-info">{{stream.game}} - {{stream.viewers}}</div>
-<div class="channel-description">{{stream.channel.status}}</div>
- {{/each}}
