@@ -1,0 +1,8 @@
+ {{#each data.streams as |stream|}}
+<h2>{{stream.channel.display_name}}</h2>
+<div class="channel-preview">
+	<img src="{{stream.preview.medium}}">
+</div>
+<div class="channel-info">{{stream.game}} - {{stream.viewers}}</div>
+<div class="channel-description">{{stream.channel.status}}</div>
+ {{/each}}

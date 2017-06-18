@@ -3,12 +3,15 @@
 		<div class="col-md-6">
 			<H1>Twitch Search</H1>
 			<div class="input-group col-md-12">
-				{{search-bar}}
+				{{search-bar data=model}}
 				<span class="input-group-btn">
 					<button class="btn btn-lg" type="button">
 						<i class="glyphicon glyphicon-search"></i>
 					</button>
 				</span>
+			</div>
+			<div>
+				{{stream-list data=model}}
 			</div>
 		</div>
 	</div>

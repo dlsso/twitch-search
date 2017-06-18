@@ -6,7 +6,7 @@ export default Ember.Component.extend({
 
   queryChanged: Ember.observer('query', function() {
     let query = this.get('query');
-    if(query.length > 3){
+    if(query.length){
       let request = {
         accept: 'application/vnd.twitchtv.v5+json',
         client_id: config.apiKey,
@@ -15,8 +15,10 @@ export default Ember.Component.extend({
         query: query
       };
       Ember.$.get("https://api.twitch.tv/kraken/search/streams", request).then((response) => {
-        console.log(response)
+        this.set('data', response);
       });
+    } else {
+      this.set('data', {});
     }
   })
 });
