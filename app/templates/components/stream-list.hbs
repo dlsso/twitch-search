@@ -6,10 +6,10 @@
 		</div>
 		<div class="pagination-controls col-xs-6">
 			{{#if data._links.prev}}
-				<span {{action 'changePage' data._links.prev}}>prev</span>
+				<span {{action 'changePage' data._links.prev}} class="prev-page">&#x25C0;</span>
 			{{/if}}
 			<span>{{data.page_number}}/{{data.pages}}</span>
-			<span {{action 'changePage' data._links.next}}>next</span>
+			<span {{action 'changePage' data._links.next}} class="next-page">&#x25b6;</span>
 		</div>
 	</div>
 {{else if data.no_results}}

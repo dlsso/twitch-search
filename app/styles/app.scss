@@ -19,6 +19,11 @@
 	margin-top: 1em;
 	.pagination-controls {
 		text-align: right;
+		.prev-page,
+		.next-page {
+			cursor: pointer;
+			padding: 0 0.5em;
+		}
 	}
 }
 
