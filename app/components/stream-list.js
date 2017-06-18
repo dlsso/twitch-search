@@ -12,9 +12,12 @@ export default Ember.Component.extend({
 				client_id: config.apiKey,
 			};
 			Ember.$.get(url, request).then((response) => {
-		        // Send data to template after setting a couple useful properties
+		        // Send data to template after setting a few useful properties
 				response.page_number = (offset/numberPerPage) + 1;
 				response.pages = Math.ceil(response._total/numberPerPage);
+				if(!response._total){
+					response.no_results = true;
+				}
 				this.set('data', response);
 			});
 		}

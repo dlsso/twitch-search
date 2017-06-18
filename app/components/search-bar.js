@@ -16,9 +16,12 @@ export default Ember.Component.extend({
         query: query
       };
       Ember.$.get("https://api.twitch.tv/kraken/search/streams", request).then((response) => {
-        // Send data to template after setting a couple useful properties
+        // Send data to template after setting a few useful properties
         response.page_number = 1;
         response.pages = Math.ceil(response._total/parseInt(request.limit));
+        if(!response._total){
+          response.no_results = true;
+        }
         this.set('data', response);
       });
     } else {

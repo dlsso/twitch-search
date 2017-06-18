@@ -1,16 +1,20 @@
-<div class="container">
+<div class="results-container container">
 {{#if data._total}}
 	<div class="streams-header row">
-		<div class="total-results">
+		<div class="total-results col-xs-6">
 			Total results: {{data._total}}
 		</div>
-		<div class="pagination">
+		<div class="pagination-controls col-xs-6">
 			{{#if data._links.prev}}
 				<span {{action 'changePage' data._links.prev}}>prev</span>
 			{{/if}}
 			<span>{{data.page_number}}/{{data.pages}}</span>
 			<span {{action 'changePage' data._links.next}}>next</span>
 		</div>
+	</div>
+{{else if data.no_results}}
+	<div class="streams-header row">
+		<span class="no-results col-xs-6">No results found!</span>
 	</div>
 {{/if}}
 {{#each data.streams as |stream|}}

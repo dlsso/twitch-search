@@ -10,26 +10,38 @@
 	}
 }
 
+.results-container {
+	margin-top: 2em;
+}
+
+.streams-header {
+	font-size: 1.2em;
+	margin-top: 1em;
+	.pagination-controls {
+		text-align: right;
+	}
+}
+
 .channel-row {
 	background-color: #f8f8f8;
 	border-radius: .5em;
 	margin-top: 2em;
 	padding: 1em 0;
-}
 
-.preview-img {
-	width: 100%;
-}
+	.preview-img {
+		width: 100%;
+	}
 
-.channel-name{
-	font-size: 2em;
-}
+	.channel-name{
+		font-size: 2em;
+	}
 
-.channel-details {
-	color: #999;
-	font-size: 1.3em;
-}
+	.channel-details {
+		color: #999;
+		font-size: 1.3em;
+	}
 
-.channel-description {
-	margin-top: 1em;
+	.channel-description {
+		margin-top: 1em;
+	}
 }
