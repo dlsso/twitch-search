@@ -1,4 +1,18 @@
 <div class="container">
+{{#if data._total}}
+	<div class="streams-header row">
+		<div class="total-results">
+			Total results: {{data._total}}
+		</div>
+		<div class="pagination">
+			{{#if data._links.prev}}
+				<span {{action 'changePage' data._links.prev}}>prev</span>
+			{{/if}}
+			<span>{{data.page_number}}/{{data.pages}}</span>
+			<span {{action 'changePage' data._links.next}}>next</span>
+		</div>
+	</div>
+{{/if}}
 {{#each data.streams as |stream|}}
 	<div class="channel-row row">
 		<div class="col-sm-4 col-md-3">
