@@ -4,7 +4,7 @@
     <div class="total-results col-xs-6">
       Total results: {{data._total}}
     </div>
-    <div class="pagination-controls col-xs-6" title="Use left and right arrow keys to change pages">
+    <div class="pagination-controls col-xs-6" title="Use left and right arrow keys to change pages when this section is focused">
       {{#if data._links.prev}}
         <button tabindex="0" {{action 'changePage' data._links.prev}} class="prev-page">&#x25C0;</button>
       {{/if}}
