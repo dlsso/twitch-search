@@ -1,9 +1,23 @@
 @import "bootstrap";
 
+$twitch-purple: #6441A4;
+@font-face {
+  font-family: "Dimitry";
+  src: url("/fonts/dimitry.ttf");
+}
+
+h1 {
+  color: $twitch-purple;
+  font-family: "Dimitry";
+  font-size: 2.8em;
+}
 
 .input-group {
+  #twitch-search {
+    border: solid 3px $twitch-purple;
+  }
   .btn {
-    background-color: purple;
+    background-color: $twitch-purple;
   }
   .glyphicon-search {
     color: #FFF;
@@ -48,5 +62,13 @@
 
   .channel-description {
     margin-top: 1em;
+  }
+}
+
+// Above boostrap extra small size
+@media (min-width: 768px) {
+  h1 {
+    margin-top: 1em;
+    font-size: 4.8em;
   }
 }
