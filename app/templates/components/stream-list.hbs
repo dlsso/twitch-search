@@ -1,4 +1,4 @@
-<div class="results-container container" {{action "handleKeyPress" data._links on="keyDown"}}>
+<div class="results-container container" {{action "handleKeyPress" data._links on="keyDown" preventDefault=false}}>
 {{#if data._total}}
   <div class="streams-header row">
     <div class="total-results col-xs-6">
