@@ -1,7 +1,26 @@
-# twitch-search
+# Twitch Search
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a simple app for searching streams from twitch.tv. Built using Ember and the Twitch API.
+Try it out at [dlsso.github.com/twitch-search](dlsso.github.com/twitch-search)!
+
+## Potential improvements
+
+* Improve styling - current styling is very basic
+
+* Improve usability - controls should be easy to hit and easily available anywhere on page
+
+* Filtering - add filter by game, stream quality, etc.
+
+* Infinite scroll - could replace pagination, less effort to use
+
+
+## Bugs
+
+* Search icon was one pixel too tall on one machine I visited from, but could not reproduce in dev enviroment.
+
+* Clearing the search by quickly pressing backspace can cause a bug where the results are not cleared. This happens because the result does not come back until after the template has been cleared, so it will incorrectly repopulte with the now outdated result. This could be solved by aborting the current request when the query changes or checking that the query still matches when the call comes back.
+
+# Setup instructions courtesy of Ember CLI
 
 ## Prerequisites
 
@@ -22,29 +41,3 @@ You will need the following things properly installed on your computer.
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
